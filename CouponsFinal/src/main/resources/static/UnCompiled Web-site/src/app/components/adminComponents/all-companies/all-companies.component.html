@@ -1,0 +1,20 @@
+<div>
+    <main *ngFor="let company of companies"> 
+        <span> name={{company.name}}</span><br/>
+    <section *ngIf="id!=company.id">
+        <span> email= {{company.email}}</span><br/>
+        <span> password= {{company.password}}</span><br/>
+    </section>
+    <aside *ngIf="id==company.id">
+        <form >
+            <span>email= </span><input name="mail" type="email" [(ngModel)]="email"><br/>
+            <span>password= </span><input name="pass" type="text" [(ngModel)]="password"><br/>
+    </form>
+    <button (click)="updateCompany()">Update</button>
+    </aside>
+        <p>
+        <button (click)="delete1Company(company.id)">delete company</button>
+        <button *ngIf="id!=company.id" (click)="editComp(company.id,company.name,company.email,company.password)">edit company</button>
+       </p>
+    </main>
+</div>

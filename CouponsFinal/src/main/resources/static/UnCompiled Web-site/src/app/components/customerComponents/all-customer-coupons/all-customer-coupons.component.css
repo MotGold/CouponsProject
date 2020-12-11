@@ -1,0 +1,30 @@
+div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    main{
+        margin: 20px;
+        padding: 5px;
+    }
+    
+    main:hover{
+        background-color: palegoldenrod;
+    }
+    
+    .cent{
+        position: absolute;
+        left: 40%;
+        top: 40%;
+    }
+
+    header{
+        text-align: center;
+    }
+    .space{
+       margin-left: 4%;
+    }
+
+    aside{
+        text-align: center;
+    }

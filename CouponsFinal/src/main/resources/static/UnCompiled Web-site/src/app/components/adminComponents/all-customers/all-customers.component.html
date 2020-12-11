@@ -1,0 +1,24 @@
+<div>
+    <main *ngFor="let customer of customers"> 
+        <span> id={{customer.id}}</span><br/>
+    <section *ngIf="id!=customer.id">
+        <span>First name= {{customer.firstName}}</span><br/>
+        <span>Last name= {{customer.lastName}}</span><br/>
+        <span> email= {{customer.email}}</span><br/>
+        <span> password= {{customer.password}}</span><br/>
+    </section>
+    <aside *ngIf="id==customer.id">
+        <form >
+            <span>First name= </span><input name="First" type="text" [(ngModel)]="firstName"><br/>
+            <span>Last name= </span><input name="Last" type="text" [(ngModel)]="lastName"><br/>
+            <span>email= </span><input name="mail" type="text" [(ngModel)]="email"><br/>
+            <span>password= </span><input name="pass" type="text" [(ngModel)]="password"><br/>
+    </form>
+    <button (click)="updateBuyer()">Update</button>
+    </aside>
+        <p>
+        <button (click)="delete1Customer(customer.id)">delete customer</button>
+        <button *ngIf="id!=customer.id" (click)="editCustomer(customer.id,customer.firstName,customer.lastName,customer.email,customer.password)">edit customer</button>
+       </p>
+    </main>
+</div>

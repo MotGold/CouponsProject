@@ -1,0 +1,15 @@
+<div>
+    <main *ngFor="let coupon of coupons">
+        <span> title= {{coupon.title}}</span><br />
+        <span> description= {{coupon.description}}</span><br />
+        <span> image= {{coupon.image}}</span><br />
+        <span> amount= {{coupon.amount}}</span><br />
+        <span> price= {{coupon.price}}</span><br />
+        <span> activation date= {{coupon.startDate}}</span><br />
+        <span> expiration date= {{coupon.endDate}}</span><br />
+        <span> coupon type= {{coupon.type}}</span><br />
+        <p>
+            <button (click)="getCoupon(coupon.id)">Purchase Coupon</button>
+        </p>
+    </main>
+</div>

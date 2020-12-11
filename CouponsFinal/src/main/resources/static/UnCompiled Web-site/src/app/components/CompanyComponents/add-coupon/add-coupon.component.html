@@ -1,0 +1,20 @@
+<div>
+    <form >
+        <input name="title" type="text" placeholder="Coupon title" [(ngModel)]="title"><br/>
+        <input name="description" type="text" placeholder="Coupon description" [(ngModel)]="description"><br/>
+        <input name="image" type="text" placeholder="Coupon image" [(ngModel)]="image"><br/>
+        <input name="amount" type="number" placeholder="Coupon amount" [(ngModel)]="amount"><br/>
+        <input name="price" type="number" placeholder="Coupon price" [(ngModel)]="price"><br/>
+        <input name="activation" type="date" placeholder="Coupon activation date" [(ngModel)]="activation"><br/>
+        <input name="expiration" type="date" placeholder="Coupon expiration date" [(ngModel)]="expiration"><br/>
+        <select name="couponType" [(ngModel)]="couponType">
+            <option value="null" hidden disabled selected>Type of coupon:</option>
+            <option value=1>sport</option>
+            <option value=2>food</option>
+            <option value=3>vacation</option>
+            <option value=4>electronics</option>
+            <option value=5>spa</option>
+        </select><br/>
+        <input type="button" value="Submit" (click)="addCoupon()">
+    </form>
+    </div>

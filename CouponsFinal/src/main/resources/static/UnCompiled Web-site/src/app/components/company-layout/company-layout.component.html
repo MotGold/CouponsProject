@@ -1,0 +1,12 @@
+<div>
+    <nav>
+        <a routerLink="theCompany" >Company info</a>
+        <a routerLink="newCoupon">Create new Coupon</a>
+        <a routerLink="companyCoupons">Active Coupons</a>
+        <a routerLink="oneCoupon">edit specific coupon</a>
+        <aside><button class="but" (click)="logout()">Logout</button></aside>
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+</main>
+</div>

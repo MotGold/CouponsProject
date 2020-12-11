@@ -1,0 +1,22 @@
+nav{
+    display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+text-align: center;
+}
+
+nav>a{
+    margin: auto;
+    background-color: beige;
+    padding: 5%;
+    margin-bottom: 3%;
+    width: 50%;
+}
+
+aside{
+    margin: auto;
+    text-align: center;
+}
+
+.but{
+    font-size: large;
+}

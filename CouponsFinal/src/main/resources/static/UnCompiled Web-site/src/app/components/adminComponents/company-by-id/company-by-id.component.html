@@ -1,0 +1,24 @@
+<div>
+    <form>
+        <input name="id" type="number" placeholder="Enter company id" [(ngModel)]="id"><br />
+        <input type="button" value="Submit" (click)="getCompany()">
+    </form>
+    <main *ngIf="company">
+        <p>{{company.name}}:</p>
+        <section *ngIf="option==false">
+            <span> email={{company.email}}</span><br />
+            <span> password={{company.password}}</span><br />
+        </section>
+        <aside *ngIf="option==true">
+            <form>
+                <span>email= </span><input name="mail" type="text" [(ngModel)]="email"><br />
+                <span>password= </span><input name="pass" type="text" [(ngModel)]="password"><br />
+            </form>
+            <button (click)="updateCompany()">Update</button>
+        </aside>
+        <p>
+            <button (click)="delete1Company()">delete company</button>
+            <button *ngIf="option==false" (click)="editComp()">edit company</button>
+        </p>
+    </main>
+</div>

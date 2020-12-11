@@ -1,0 +1,14 @@
+<div>
+    <nav>
+        <a routerLink="newCompany" >Add Company</a>
+        <a routerLink="allCompanies">Company List</a>
+        <a routerLink="oneCompany">Work on one Company</a>
+        <a routerLink="newCustomer">Add Customer</a>
+        <a routerLink="allCustomers">Customer List</a>
+        <a routerLink="oneCustomer">Work on one Customer</a>
+        <aside><button class="but" (click)="logout()">Logout</button></aside>
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+</main>
+</div>

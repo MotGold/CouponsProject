@@ -1,0 +1,12 @@
+header{
+    float: left;
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+}
+main{
+    text-align: center;
+}
+ img{
+    width: 45%;
+ }

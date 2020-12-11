@@ -1,0 +1,42 @@
+<div>
+    <form>
+        <input name="id" type="number" placeholder="Enter coupon id" [(ngModel)]="id"><br />
+        <input type="button" value="Submit" (click)="getCoupon()">
+    </form>
+    <main *ngIf="coupon">
+        <p>{{coupon.id}}:</p>
+        <section *ngIf="option==false">
+            <span> title= {{coupon.title}}</span><br />
+            <span> description= {{coupon.description}}</span><br />
+            <span> image= {{coupon.image}}</span><br />
+            <span> amount= {{coupon.amount}}</span><br />
+            <span> price= {{coupon.price}}</span><br />
+            <span> activation date= {{coupon.startDate}}</span><br />
+            <span> expiration date= {{coupon.endDate}}</span><br />
+            <span> coupon type= {{coupon.type}}</span><br />
+        </section>
+        <aside *ngIf="option==true">
+            <form>
+                <span>title= </span><input name="title" type="text" [(ngModel)]="title"><br />
+                <span> description= </span><input name="description" type="text" [(ngModel)]="description"><br />
+                <span> image= </span><input name="image" type="text" [(ngModel)]="image"><br />
+                <span> amount= </span><input name="amount" type="number" [(ngModel)]="amount"><br />
+                <span> price= </span><input name="price" type="number" [(ngModel)]="price"><br />
+                <span> activation date= </span><input name="startDate" type="date" [(ngModel)]="activation"><br />
+                <span> expiration date= </span><input name="endDate" type="date" [(ngModel)]="expiration"><br />
+                <select name="couponType" [(ngModel)]="couponType">
+                    <option value="sport">sport</option>
+                    <option value="food">food</option>
+                    <option value="vacation">vacation</option>
+                    <option value="electronics">electronics</option>
+                    <option value="spa">spa</option>
+                </select><br />
+            </form>
+            <button (click)="updateCoupon()">Update</button>
+        </aside>
+        <p>
+            <button (click)="delete1Coupon()">delete company</button>
+            <button *ngIf="option==false" (click)="editCoupon()">edit company</button>
+        </p>
+    </main>
+</div>

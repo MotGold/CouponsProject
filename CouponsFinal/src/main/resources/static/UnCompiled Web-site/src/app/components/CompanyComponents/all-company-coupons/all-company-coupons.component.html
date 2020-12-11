@@ -1,0 +1,65 @@
+<header>
+    <h3>choose List type: </h3>
+    <input class="space" type="radio" name="listType" value="1" [(ngModel)]="listOption">all coupons
+    <input class="space" type="radio" name="listType" value="2" [(ngModel)]="listOption">coupons by max price
+    <input type="radio" class="space" name="listType" value="3" [(ngModel)]="listOption">coupons by type<br />
+</header>
+<aside *ngIf="listOption=='1'">
+    <p><button (click)="listTypes()">submit</button></p>
+</aside>
+<aside *ngIf="listOption=='2'">
+    <p><input type="number" placeholder="Coupon price" [(ngModel)]="priceSelection"><br />
+        <button (click)="listTypes()">submit</button></p>
+</aside>
+<aside *ngIf="listOption=='3'">
+    <p>
+        <select [(ngModel)]="typeSelection">
+            <option value="null" hidden disabled selected>Type of coupon:</option>
+            <option value="sport">sport</option>
+            <option value="food">food</option>
+            <option value="vacation">vacation</option>
+            <option value="electronics">electronics</option>
+            <option value="spa">spa</option>
+        </select>
+        <button (click)="listTypes()">submit</button></p>
+</aside>
+<div *ngIf="ok==true">
+    <main *ngFor="let coupon of coupons">
+        <span> id= {{coupon.id}}</span><br />
+        <section *ngIf="id!=coupon.id">
+            <span> title= {{coupon.title}}</span><br />
+            <span> description= {{coupon.description}}</span><br />
+            <span> image= {{coupon.image}}</span><br />
+            <span> amount= {{coupon.amount}}</span><br />
+            <span> price= {{coupon.price}}</span><br />
+            <span> activation date= {{coupon.startDate}}</span><br />
+            <span> expiration date= {{coupon.endDate}}</span><br />
+            <span> coupon type= {{coupon.type}}</span><br />
+        </section>
+        <section *ngIf="id==coupon.id">
+            <form>
+                <span>title= </span><input name="title" type="text" [(ngModel)]="title"><br />
+                <span> description= </span><input name="description" type="text" [(ngModel)]="description"><br />
+                <span> image= </span><input name="image" type="text" [(ngModel)]="image"><br />
+                <span> amount= </span><input name="amount" type="number" [(ngModel)]="amount"><br />
+                <span> price= </span><input name="price" type="number" [(ngModel)]="price"><br />
+                <span> activation date= </span><input name="startDate" type="date" [(ngModel)]="activation"><br />
+                <span> expiration date= </span><input name="endDate" type="date" [(ngModel)]="expiration"><br />
+                <select name="couponType" [(ngModel)]="couponType">
+                    <option value="sport">sport</option>
+                    <option value="food">food</option>
+                    <option value="vacation">vacation</option>
+                    <option value="electronics">electronics</option>
+                    <option value="spa">spa</option>
+                </select><br />
+            </form>
+            <button (click)="updateCoupon()">Update</button>
+        </section>
+        <p>
+            <button (click)="delete1Coupon(coupon.id)">delete coupon</button>
+            <button *ngIf="id!=coupon.id"
+                (click)="editCoupon(coupon.id,coupon.title,coupon.description,coupon.image,coupon.amount,coupon.price,coupon.startDate,coupon.endDate,coupon.type)">edit
+                coupon</button>
+        </p>
+    </main>
+</div>

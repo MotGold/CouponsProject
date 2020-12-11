@@ -1,0 +1,27 @@
+<div>
+    <form>
+        <input name="id" type="number" placeholder="Enter customer id" [(ngModel)]="id"><br />
+        <input type="button" value="Submit" (click)="getCustomer()">
+    </form>
+    <main *ngIf="customer">
+        <section *ngIf="option==false">
+            <span>First name= {{customer.firstName}}</span><br />
+            <span>Last name= {{customer.lastName}}</span><br />
+            <span> email={{customer.email}}</span><br />
+            <span> password={{customer.password}}</span><br />
+        </section>
+        <aside *ngIf="option==true">
+            <form>
+                <span>First name= </span><input name="first" type="text" [(ngModel)]="firstName"><br />
+                <span>Last name= </span><input name="last" type="text" [(ngModel)]="lastName"><br />
+                <span>email= </span><input name="mail" type="text" [(ngModel)]="email"><br />
+                <span>password= </span><input name="pass" type="text" [(ngModel)]="password"><br />
+            </form>
+            <button (click)="updateCustomer()">Update</button>
+        </aside>
+        <p>
+            <button (click)="delete1Customer()">delete customer</button>
+            <button *ngIf="option==false" (click)="editCustomer()">edit customer</button>
+        </p>
+    </main>
+</div>

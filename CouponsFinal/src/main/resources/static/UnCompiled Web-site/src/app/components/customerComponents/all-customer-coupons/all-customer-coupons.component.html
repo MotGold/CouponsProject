@@ -1,0 +1,37 @@
+<header>
+    <h3>choose List type: </h3>
+    <input class="space" type="radio" name="listType" value="1" [(ngModel)]="listOption">all coupons
+    <input class="space" type="radio" name="listType" value="2" [(ngModel)]="listOption">coupons by max price
+    <input type="radio" class="space" name="listType" value="3" [(ngModel)]="listOption">coupons by type<br />
+</header>
+<aside *ngIf="listOption=='1'">
+    <p><button (click)="listTypes()">submit</button></p>
+</aside>
+<aside *ngIf="listOption=='2'">
+    <p><input type="number" placeholder="Coupon price" [(ngModel)]="priceSelection"><br />
+        <button (click)="listTypes()">submit</button></p>
+</aside>
+<aside *ngIf="listOption=='3'">
+    <p>
+        <select [(ngModel)]="typeSelection">
+            <option value="null" hidden disabled selected>Type of coupon:</option>
+            <option value="sport">sport</option>
+            <option value="food">food</option>
+            <option value="vacation">vacation</option>
+            <option value="electronics">electronics</option>
+            <option value="spa">spa</option>
+        </select>
+        <button (click)="listTypes()">submit</button></p>
+</aside>
+<div *ngIf="ok==true">
+    <main *ngFor="let coupon of coupons">
+        <section>
+            <span> title= {{coupon.title}}</span><br />
+            <span> description= {{coupon.description}}</span><br />
+            <span> image= {{coupon.image}}</span><br />
+            <span> price= {{coupon.price}}</span><br />
+            <span> expiration date= {{coupon.endDate}}</span><br />
+            <span> coupon type= {{coupon.type}}</span><br />
+        </section>
+    </main>
+</div>

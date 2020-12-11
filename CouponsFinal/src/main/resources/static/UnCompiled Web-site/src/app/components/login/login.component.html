@@ -1,0 +1,36 @@
+<div>
+    <header>
+        <form>
+            <p>Login:</p>
+            <input name="email" type="email" placeholder="e-mail" [(ngModel)]="email"><br />
+            <input name="pass" type="password" placeholder="Password" [(ngModel)]="pass"><br />
+            <select name="type" [(ngModel)]="type">
+                <option [ngValue]=null hidden disabled selected>Please enter your authorization level:</option>
+                <option value="1">Administrator</option>
+                <option value="2">Company</option>
+                <option value="3">Client</option>
+            </select><br />
+            <input type="button" value="Submit" (click)="login()">
+        </form>
+
+        <div style="font-weight: bold;">
+            Admin login:
+        </div>
+        <div style="font-weight: bold;">
+            email:
+        </div>
+        <div>admin@admin.com</div>
+        <div style="font-weight: bold;">
+            password:
+        </div>
+        admin
+
+    </header>
+    <main>
+        <article>
+            <h1>Coupons-R-Us</h1>
+            <h3>where your coupon needs is our creed</h3>
+            <footer><img src="/assets/coupons.jpg" alt="coupons"></footer>
+        </article>
+    </main>
+</div>
